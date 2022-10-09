@@ -1,0 +1,184 @@
+:root {
+  --color-accent: #b1c252;
+  --color-accent-dark: #89b55b;
+  --color-accent-light: #e9eda5;
+  --color-primary: #4b6b35;
+  --color-headings: #18200d;
+  --color-text: #616161;
+  --color-headings: #000;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Urbanist", sans-serif;
+  color: var(--color-text);
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Josefin Sans", sans-serif;
+  color: var(--color-headings);
+  line-height: 1.2;
+  font-weight: 400;
+  max-width: 40rem;
+  margin: 1.5em 0 0;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+p {
+  margin: 1.2rem 0;
+}
+
+main {
+  margin: 0 auto;
+  padding: 0 1rem;
+  max-width: 50rem;
+}
+
+article {
+  margin-bottom: 2rem;
+}
+
+aside,
+footer {
+  padding: 0 1rem;
+}
+
+img {
+  max-width: 600px;
+  height: auto;
+  width: 100%;
+  display: block;
+}
+
+picture img {
+  max-width: none;
+}
+
+svg {
+  width: 200px;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+a[href]:hover {
+  color: var(--color-accent);
+}
+
+img[srcset] {
+  width: 50%;
+  height: auto;
+  margin: 2rem auto;
+}
+
+/* temporary fix to size svg images */
+img[src$="svg"] {
+  width: 200px;
+}
+
+/* general use styles */
+.button {
+  background-color: var(--color-accent-dark);
+  color: white;
+  border-radius: 6px;
+  padding: 0.8rem 1.5rem;
+  text-align: center;
+  display: inline-block;
+  margin: 1rem 0 1.8rem;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: var(--color-accent);
+  transition: background-color 400ms;
+}
+
+/* hero styles */
+.hero {
+  position: relative;
+}
+
+.hero div {
+  position: absolute;
+  inset: 0 0 0 0;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.hero h1,
+.hero p {
+  color: #fff;
+  margin: 0 10%;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 1rem + 5vw, 7rem);
+  margin-top: 30vh;
+  margin-bottom: 0.5rem;
+  line-height: 1;
+  text-shadow: 1px 1px 3px #000;
+  max-width: 60rem;
+}
+
+/* cards */
+.cards {
+  display: flex;
+  gap: 1rem;
+  margin: 2rem 1rem;
+}
+
+.card {
+  flex: 1 1 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.card img {
+  transition: transform 400ms;
+}
+
+.card:hover img {
+  transform: scale(1.1);
+}
+
+.card p {
+  position: absolute;
+  inset: auto 0 0;
+  line-height: 1;
+  margin: 0;
+  padding: 3rem 1rem 1rem;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #fff;
+  background-image: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.6),
+    rgba(0, 0, 0, 0)
+  );
+}
+
+@media (min-width: 381px) {
+  picture img {
+    height: 100vh;
+    object-fit: cover;
+  }
+}
